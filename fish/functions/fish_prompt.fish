@@ -32,8 +32,8 @@ function fish_prompt
         set -l field_value $argv[3]
 
         set_color normal
-        set_color $retc
-        echo -n '─'
+        set_color -o yellow
+        echo -n ' - '
         set_color -o green
         echo -n '['
         set_color normal
@@ -41,7 +41,6 @@ function fish_prompt
         and echo -n $field_name:
         set_color $retc
         echo -n $field_value
-        set_color -o green
         echo -n ']'
     end
 
@@ -69,6 +68,12 @@ function fish_prompt
     echo -n (prompt_hostname)
     set_color -o white
     echo -n :(prompt_pwd)
+    set_color -o green
+    echo -n ']'
+    set_color -o green
+    echo -n '['
+    set_color -o yellow
+    echo -n '         '
     set_color -o green
     echo -n ']'
 
